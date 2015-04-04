@@ -2,7 +2,7 @@
 %%% you should edit this file to manage how to start applications
 %%%
 -module(config).
--export([start/0]).
+-export([auto_run/0, auto_test/0]).
 
 apps() -> [crypto, cowlib, ranch, cowboy, pippi, erp, mnesia, sync, odbc].
 
