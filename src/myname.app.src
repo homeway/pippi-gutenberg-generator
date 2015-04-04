@@ -1,0 +1,15 @@
+%% Feel free to use, reuse and abuse the code in this file.
+
+{application, myname, [
+	{description, "pippi web framework."},
+	{vsn, "1"},
+	{modules, []},
+	{registered, [myname_sup]},
+	{applications, [
+		kernel,
+		stdlib,
+		cowboy
+	]},
+	{mod, {myname_app, []}},
+	{env, []}
+]}.

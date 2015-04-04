@@ -1,0 +1,5 @@
+postinstall:
+  commands:
+    - rebar g-d co
+  message:
+    Run `rebar g-d co` to compile the application.
