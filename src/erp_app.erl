@@ -1,7 +1,7 @@
 %% Feel free to use, reuse and abuse the code in this file.
 
 %% @private
--module(myname_app).
+-module(erp_app).
 -behaviour(application).
 
 %% API.
@@ -14,14 +14,14 @@ start(_Type, _Args) ->
 	% Mime = [{mimetypes,cow_mimetypes,all}],
 	Dispatch = cowboy_router:compile([
 		{'_', [
-			{"/ws",    pippi_websocket, []},
-			{"/",      cowboy_static, {file, "priv/index.html"}},
-			{"/[...]", cowboy_static, {dir, "priv"}}
+			{"/ws",    pippi_websocket, []}
+			% {"/",      cowboy_static, {file, "priv/index.html"}},
+			% {"/[...]", cowboy_static, {dir, "priv"}}
 		]}
 	]),
 	{ok, _} = cowboy:start_http(http, 100, [{port, 8080}],
 		[{env, [{dispatch, Dispatch}]}]),
-	myname_sup:start_link().
+	erp_sup:start_link().
 
 stop(_State) ->
 	ok.
