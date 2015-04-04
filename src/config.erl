@@ -9,7 +9,7 @@ apps() -> [crypto, cowlib, ranch, cowboy, pippi, erp, mnesia, sync, odbc].
 auto_run() -> [application:start(A) || A <- apps()].
 
 auto_test() ->
-    Apps = [sample|apps()],
+    Apps = apps() ++ [sample],
     [application:start(A) || A <- Apps],
     RunTests = fun(Mods) ->
         ToTest1 = [Mod || Mod <- Mods, erlang:function_exported(Mod, test, 0)],
