@@ -1,5 +1,7 @@
 postinstall:
   commands:
     - rebar g-d co
+    - cd tests & rebar co & cd ..
+    - chmod a+x *.sh
   message:
-    Run `rebar g-d co` to compile the application.
+    Run `auto_test.sh` to start application with auto run eunit test
