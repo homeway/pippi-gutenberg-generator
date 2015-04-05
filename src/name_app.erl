@@ -1,7 +1,7 @@
 %% Feel free to use, reuse and abuse the code in this file.
 
 %% @private
--module(erp_app).
+-module({{NAME}}_app).
 -behaviour(application).
 
 %% API.
@@ -22,7 +22,7 @@ start(_Type, _Args) ->
 		[{port, 8080}],
 		[{env, [{dispatch, Dispatch}]}]
 	),
-	erp_sup:start_link().
+	{{NAME}}_sup:start_link().
 
 stop(_State) ->
 	ok.

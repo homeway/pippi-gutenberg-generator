@@ -1,7 +1,7 @@
 %% Feel free to use, reuse and abuse the code in this file.
 
 %% @private
--module(erp_sup).
+-module({{NAME}}_sup).
 -behaviour(supervisor).
 
 %% API.
